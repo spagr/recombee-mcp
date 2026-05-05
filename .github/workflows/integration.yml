@@ -1,0 +1,27 @@
+name: Integration Tests
+
+on:
+  schedule:
+    - cron: "0 3 * * *"  # Daily at 3am UTC
+  workflow_dispatch:
+
+jobs:
+  integration:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Run integration tests
+        env:
+          RECOMBEE_INTEGRATION_DB_ID: ${{ secrets.RECOMBEE_INTEGRATION_DB_ID }}
+          RECOMBEE_INTEGRATION_TOKEN: ${{ secrets.RECOMBEE_INTEGRATION_TOKEN }}
+        run: uv run pytest tests/integration/ -v
