@@ -89,6 +89,7 @@ See `.claude-plans/README.md` for the template and workflow.
 ## SDK Notes
 
 - Exception class is `APIException` (not `ApiException`) from `recombee_api_client.exceptions`
-- `ListSegmentations` requires `source_type` argument
+- `ListSegmentations` requires `source_type` argument; valid values are `"items"`, `"users"`, `"interactions"` (lowercase)
+- `RecombeeClient(region=...)` expects `Region` enum (e.g. `Region.EU_WEST`), not a hostname string
 - SDK is synchronous; FastMCP supports sync handlers natively
 - For any FastMCP, Recombee SDK, pydantic, ruff, mypy, or pytest API question — query Context7 first.

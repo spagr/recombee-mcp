@@ -12,6 +12,19 @@ from recombee_mcp.server import ServerContext
 from recombee_mcp.settings import Settings
 
 
+@pytest.fixture(autouse=True)
+def _isolate_env(monkeypatch: pytest.MonkeyPatch, tmp_path: Path) -> None:
+    """Isolate tests from any local .env file or RECOMBEE_* env vars.
+
+    Ensures Settings() in tests behaves identically on dev machines and CI,
+    regardless of the developer's real Recombee credentials.
+    """
+    for var in list(__import__("os").environ):
+        if var.startswith("RECOMBEE_"):
+            monkeypatch.delenv(var, raising=False)
+    monkeypatch.chdir(tmp_path)
+
+
 @pytest.fixture
 def settings() -> Settings:
     return Settings(db_id="test-db", private_token="test-token", profile="sandbox")

@@ -16,7 +16,7 @@ def register_segment_tools(mcp: Any, ctx: Any) -> None:
 
     @mcp.tool()
     def list_segmentations(
-        source_type: str = "item-property",
+        source_type: str = "items",
     ) -> dict[str, Any]:
         """List all configured segmentations in the database.
 
@@ -25,7 +25,7 @@ def register_segment_tools(mcp: Any, ctx: Any) -> None:
         segment-level recommendations.
 
         Args:
-            source_type: Type of segmentation source (default: "item-property").
+            source_type: One of "items", "users", "interactions" (default: "items").
         """
         ctx.audit.log(
             profile=ctx.settings.profile,
