@@ -8,14 +8,6 @@ A production-grade MCP (Model Context Protocol) server that wraps the [Recombee]
 
 ## Quick Start
 
-Install:
-
-```bash
-uv tool install recombee-mcp
-```
-
-Or clone and run locally:
-
 ```bash
 git clone https://github.com/spagr/recombee-mcp.git
 ```
@@ -38,16 +30,43 @@ uv sync
 uv run recombee-mcp
 ```
 
+Optionally, install as a global tool so `recombee-mcp` is available everywhere:
+
+```bash
+uv tool install .
+```
+
 ### Claude Desktop Configuration
 
-Add to your Claude Desktop `claude_desktop_config.json`:
+Add to your Claude Desktop `claude_desktop_config.json`.
+
+**From a local clone** (recommended for development — always uses current code):
 
 ```json
 {
   "mcpServers": {
     "recombee": {
       "command": "uv",
-      "args": ["tool", "run", "recombee-mcp"],
+      "args": ["run", "--directory", "/absolute/path/to/recombee-mcp", "recombee-mcp"],
+      "env": {
+        "RECOMBEE_DB_ID": "your-database-id",
+        "RECOMBEE_PRIVATE_TOKEN": "your-private-token",
+        "RECOMBEE_REGION": "eu-west"
+      }
+    }
+  }
+}
+```
+
+Replace `/absolute/path/to/recombee-mcp` with the actual path to your clone.
+
+**After `uv tool install .`** (cleaner, but requires reinstall after code changes):
+
+```json
+{
+  "mcpServers": {
+    "recombee": {
+      "command": "recombee-mcp",
       "env": {
         "RECOMBEE_DB_ID": "your-database-id",
         "RECOMBEE_PRIVATE_TOKEN": "your-private-token",
