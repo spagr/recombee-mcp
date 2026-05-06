@@ -4,24 +4,43 @@ Thank you for your interest in contributing to recombee-mcp!
 
 ## Setup
 
+Clone:
+
 ```bash
-# Clone
 git clone https://github.com/martinspacek/recombee-mcp.git
+```
+
+```bash
 cd recombee-mcp
+```
 
-# Install uv (if not already installed)
-# macOS/Linux:
+Install uv (if not already installed) — macOS/Linux:
+
+```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
-# Windows:
+```
+
+Windows:
+
+```bash
 winget install astral-sh.uv
+```
 
-# Install dependencies
+Install dependencies:
+
+```bash
 uv sync
+```
 
-# Install pre-commit hooks
+Install pre-commit hooks:
+
+```bash
 uv run pre-commit install
+```
 
-# Copy environment template
+Copy environment template:
+
+```bash
 cp .env.example .env
 ```
 
@@ -29,10 +48,20 @@ cp .env.example .env
 
 1. Create a feature branch: `git checkout -b feat/my-feature`
 2. Make changes and ensure checks pass:
+
    ```bash
    uv run ruff check .
+   ```
+
+   ```bash
    uv run ruff format --check .
+   ```
+
+   ```bash
    uv run mypy src/
+   ```
+
+   ```bash
    uv run pytest
    ```
 3. Commit using [Conventional Commits](https://www.conventionalcommits.org/):
@@ -60,10 +89,14 @@ If using Claude Code with this project:
 
 ## Running Tests
 
-```bash
-# Unit tests (no credentials needed)
-uv run pytest tests/unit/
+Unit tests (no credentials needed):
 
-# Integration tests (requires sandbox credentials in .env)
+```bash
+uv run pytest tests/unit/
+```
+
+Integration tests (requires sandbox credentials in `.env`):
+
+```bash
 RECOMBEE_INTEGRATION_DB_ID=... RECOMBEE_INTEGRATION_TOKEN=... uv run pytest tests/integration/
 ```

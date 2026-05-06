@@ -18,14 +18,46 @@ a live Recombee deployment through natural-language conversation.
 
 ## Commands
 
+Install dependencies:
+
 ```bash
-uv sync                          # install deps
-uv run ruff check .              # lint
-uv run ruff format --check .     # format check
-uv run mypy src/                 # type check
-uv run pytest                    # tests with coverage
-uv run fastmcp dev src/recombee_mcp/server.py  # MCP Inspector
-uv run recombee-mcp              # start server (stdio)
+uv sync
+```
+
+Lint:
+
+```bash
+uv run ruff check .
+```
+
+Format check:
+
+```bash
+uv run ruff format --check .
+```
+
+Type check:
+
+```bash
+uv run mypy src/
+```
+
+Tests with coverage:
+
+```bash
+uv run pytest
+```
+
+MCP Inspector:
+
+```bash
+uv run fastmcp dev src/recombee_mcp/server.py
+```
+
+Start server (stdio):
+
+```bash
+uv run recombee-mcp
 ```
 
 ## Security Rules (NON-NEGOTIABLE)

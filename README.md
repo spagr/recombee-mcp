@@ -8,16 +8,33 @@ A production-grade MCP (Model Context Protocol) server that wraps the [Recombee]
 
 ## Quick Start
 
-```bash
-# Install
-uv tool install recombee-mcp
+Install:
 
-# Or clone and run locally
+```bash
+uv tool install recombee-mcp
+```
+
+Or clone and run locally:
+
+```bash
 git clone https://github.com/martinspacek/recombee-mcp.git
+```
+
+```bash
 cd recombee-mcp
+```
+
+```bash
 cp .env.example .env
-# Edit .env with your Recombee credentials
+```
+
+Edit `.env` with your Recombee credentials, then:
+
+```bash
 uv sync
+```
+
+```bash
 uv run recombee-mcp
 ```
 
@@ -66,8 +83,17 @@ This server is **read-only by default**. No destructive operations (`Delete*`, `
 
 ```bash
 uv sync --all-extras
+```
+
+```bash
 uv run ruff check .
+```
+
+```bash
 uv run mypy src/
+```
+
+```bash
 uv run pytest
 ```
 
