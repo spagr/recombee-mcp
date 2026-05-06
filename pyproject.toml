@@ -25,10 +25,10 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/martinspacek/recombee-mcp"
-Documentation = "https://github.com/martinspacek/recombee-mcp#readme"
-Issues = "https://github.com/martinspacek/recombee-mcp/issues"
-Changelog = "https://github.com/martinspacek/recombee-mcp/blob/main/CHANGELOG.md"
+Homepage = "https://github.com/spagr/recombee-mcp"
+Documentation = "https://github.com/spagr/recombee-mcp#readme"
+Issues = "https://github.com/spagr/recombee-mcp/issues"
+Changelog = "https://github.com/spagr/recombee-mcp/blob/main/CHANGELOG.md"
 
 [project.scripts]
 recombee-mcp = "recombee_mcp.server:main"

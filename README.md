@@ -17,7 +17,7 @@ uv tool install recombee-mcp
 Or clone and run locally:
 
 ```bash
-git clone https://github.com/martinspacek/recombee-mcp.git
+git clone https://github.com/spagr/recombee-mcp.git
 ```
 
 ```bash

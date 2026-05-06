@@ -7,7 +7,7 @@ Thank you for your interest in contributing to recombee-mcp!
 Clone:
 
 ```bash
-git clone https://github.com/martinspacek/recombee-mcp.git
+git clone https://github.com/spagr/recombee-mcp.git
 ```
 
 ```bash

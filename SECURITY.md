@@ -19,7 +19,7 @@ This MCP server handles a Recombee private API token that has full database acce
 
 ## Reporting a Vulnerability
 
-If you discover a security vulnerability, please report it via [GitHub Security Advisories](https://github.com/martinspacek/recombee-mcp/security/advisories/new).
+If you discover a security vulnerability, please report it via [GitHub Security Advisories](https://github.com/spagr/recombee-mcp/security/advisories/new).
 
 Do **not** open a public issue for security vulnerabilities.
 
